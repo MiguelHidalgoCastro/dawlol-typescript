@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Gestionacars</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <main>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm justify-content-between" id="navbar">
+            <div class="container-fluid">
+                <span class="navbar-brand" id="imgNav">
+                    <!-- Logo Image -->
+                    <img src="assets/logo.png" width="70" alt="" class="d-inline-block align-middle mr-2">
+                    <!-- Logo Text -->
+                    <span class="text-uppercase font-weight-bold">Gestionacars</span>
+                </span>
+
+                <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><span class="nav-link" id="tienda">Tienda</span></li>
+                        <li class="nav-item"><span class="nav-link" id="lista">Lista de Vehículos</span></li>
+                        <li class="nav-item"><span class="nav-link" id="addCoche">Añadir Vehículo</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Vista Tienda-->
+        <div id="vistaTienda" class="container-fluid mt-3">
+            <!--Titulo-->
+            <div class="row">
+                <div class="col-10 mx-auto" id="tituloListadoCRUD">
+                    <h2 class="fw-bold mb-3 mt-4 text-center"><u>UNIDADES DISPONIBLES</u></h2>
+                </div>
+            </div>
+
+            <!--Búsqueda-->
+            <div class="row mt-4 mb-4">
+                <div class="col-sm-10 col-xs-1 mx-auto">
+                    <h4 class="fw-bold">Búsqueda</h4>
+                </div>
+            </div>
+            <div class="row mt-2 mb-4">
+                <div class="col-1"></div>
+                <div class="col-sm-4">
+                    <label for="enFabh" style="display: none;">H</label>
+                    <select id="enFabh" class="form-select">
+                        <option selected>Marca</option>
+                        <option>Modelo</option>
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <label for="enFabq" style="display: none;">Hola</label>
+                    <select id="enFabq" class="form-select">
+                        <option value="Alfa Romeo">Alfa Romeo</option>
+                        <option value="Aston Martin">Aston Martin</option>
+                        <option value="Audi">Audi</option>
+
+                        <option value="Autovaz">Autovaz</option>
+                        <option value="Bentley">Bentley</option>
+                        <option value="Bmw">Bmw</option>
+                        <option value="Cadillac">Cadillac</option>
+
+                        <option value="Caterham">Caterham</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Chrysler">Chrysler</option>
+                        <option value="Citroen">Citroen</option>
+
+                        <option value="Cupra">Cupra</option>
+
+                        <option value="Daihatsu">Daihatsu</option>
+                        <option value="Dodge">Dodge</option>
+                        <option value="Ferrari">Ferrari</option>
+                        <option value="Fiat">Fiat</option>
+
+                        <option value="Ford">Ford</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Hummer">Hummer</option>
+                        <option value="Hyundai">Hyundai</option>
+
+                        <option value="Isuzu">Isuzu</option>
+                        <option value="Jaguar">Jaguar</option>
+                        <option value="Jeep">Jeep</option>
+                        <option value="Kia">Kia</option>
+
+                        <option value="Lamborghini">Lamborghini</option>
+                        <option value="Lancia">Lancia</option>
+                        <option value="Land Rover">Land Rover</option>
+                        <option value="Lexus">Lexus</option>
+
+                        <option value="Lotus">Lotus</option>
+                        <option value="Maserati">Maserati</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="Mercedes Benz">Mercedes Benz</option>
+
+                        <option value="MG">MG</option>
+                        <option value="Mini">Mini</option>
+                        <option value="Mitsubishi">Mitsubishi</option>
+                        <option value="Morgan">Morgan</option>
+
+                        <option value="Nissan">Nissan</option>
+                        <option value="Opel">Opel</option>
+                        <option value="Peugeot">Peugeot</option>
+                        <option value="Porsche">Porsche</option>
+
+                        <option value="Renault">Renault</option>
+                        <option value="Rolls Royce">Rolls Royce</option>
+                        <option value="Rover">Rover</option>
+                        <option value="Saab">Saab</option>
+
+                        <option value="Seat">Seat</option>
+                        <option value="Skoda">Skoda</option>
+                        <option value="Smart">Smart</option>
+                        <option value="Ssangyong">Ssangyong</option>
+
+                        <option value="Subaru">Subaru</option>
+                        <option value="Suzuki">Suzuki</option>
+                        <option value="Tata">Tata</option>
+                        <option value="Toyota">Toyota</option>
+
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Volvo">Volvo</option>
+
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-secondary" id="btnBuscar">Buscar</button>
+                </div>
+            </div>
+
+            <div class="row justify-content-center col-lg-10 col-sm-12 mx-auto" id="listaCoches">
+                <!--Listado-->
+            </div>
+        </div>
+
+        <!--Vista Lista-->
+        <div id="vistaListaCRUD" class="container-fluid mt-3">
+
+            <!--Titulo-->
+            <div class="row">
+                <div class="col-10 mx-auto" id="tituloListadoCRUD">
+                    <h2 class="fw-bold mb-3 mt-4 text-center"><u>Listado de Vehículos</u></h2>
+                </div>
+            </div>
+
+            <!--Búsqueda-->
+            <div class="row mt-4 mb-4">
+                <div class="col-sm-10 col-xs-1 mx-auto">
+                    <h4 class="fw-bold">Búsqueda</h4>
+                </div>
+            </div>
+            <div class="row mt-2 mb-4">
+                <div class="col-1"></div>
+                <div class="col-sm-4">
+                    <label for="enFabh" style="display: none;">H</label>
+                    <select id="enFabh" class="form-select">
+                        <option selected>Marca</option>
+                        <option>Modelo</option>
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <label for="enFabq" style="display: none;">Hola</label>
+                    <select id="enFabq" class="form-select">
+                        <option value="Alfa Romeo">Alfa Romeo</option>
+                        <option value="Aston Martin">Aston Martin</option>
+                        <option value="Audi">Audi</option>
+
+                        <option value="Autovaz">Autovaz</option>
+                        <option value="Bentley">Bentley</option>
+                        <option value="Bmw">Bmw</option>
+                        <option value="Cadillac">Cadillac</option>
+
+                        <option value="Caterham">Caterham</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Chrysler">Chrysler</option>
+                        <option value="Citroen">Citroen</option>
+
+                        <option value="Cupra">Cupra</option>
+
+                        <option value="Daihatsu">Daihatsu</option>
+                        <option value="Dodge">Dodge</option>
+                        <option value="Ferrari">Ferrari</option>
+                        <option value="Fiat">Fiat</option>
+
+                        <option value="Ford">Ford</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Hummer">Hummer</option>
+                        <option value="Hyundai">Hyundai</option>
+
+                        <option value="Isuzu">Isuzu</option>
+                        <option value="Jaguar">Jaguar</option>
+                        <option value="Jeep">Jeep</option>
+                        <option value="Kia">Kia</option>
+
+                        <option value="Lamborghini">Lamborghini</option>
+                        <option value="Lancia">Lancia</option>
+                        <option value="Land Rover">Land Rover</option>
+                        <option value="Lexus">Lexus</option>
+
+                        <option value="Lotus">Lotus</option>
+                        <option value="Maserati">Maserati</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="Mercedes Benz">Mercedes Benz</option>
+
+                        <option value="MG">MG</option>
+                        <option value="Mini">Mini</option>
+                        <option value="Mitsubishi">Mitsubishi</option>
+                        <option value="Morgan">Morgan</option>
+
+                        <option value="Nissan">Nissan</option>
+                        <option value="Opel">Opel</option>
+                        <option value="Peugeot">Peugeot</option>
+                        <option value="Porsche">Porsche</option>
+
+                        <option value="Renault">Renault</option>
+                        <option value="Rolls Royce">Rolls Royce</option>
+                        <option value="Rover">Rover</option>
+                        <option value="Saab">Saab</option>
+
+                        <option value="Seat">Seat</option>
+                        <option value="Skoda">Skoda</option>
+                        <option value="Smart">Smart</option>
+                        <option value="Ssangyong">Ssangyong</option>
+
+                        <option value="Subaru">Subaru</option>
+                        <option value="Suzuki">Suzuki</option>
+                        <option value="Tata">Tata</option>
+                        <option value="Toyota">Toyota</option>
+
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Volvo">Volvo</option>
+
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-secondary" id="btnBuscar">Buscar</button>
+                </div>
+            </div>
+
+            <div class="row justify-content-center col-lg-10 col-sm-12 mx-auto" id="listaCoches">
+
+                <table class="table table-hover table-striped text-center align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Modelo</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--Vista Formulario-->
+        <div id="vistaFormulario" class="container mt-3">
+            <!--Titulo-->
+            <div class="row">
+                <div class="col" id="tituloCrearCRUD">
+                    <h3 class="fw-bold mb-3 mt-2" id="tituloCrear">Crear coche</h3>
+                    <h3 class="fw-bold mb-3 mt-2" id="tituloModificar">Modificar coche</h3>
+                    <h3 class="fw-bold mb-3 mt-2" id="tituloConsultar">Consultar coche</h3>
+                </div>
+            </div>
+
+            <!--FORMULARIO-->
+
+            <div class="col-8 p-2 w-auto">
+                <div class="row mb-1">
+                    <div class="col">
+                        <label for="imarca">Marca</label>
+                        <input type="text" class="form-control" id="imarca" placeholder="Example -> Volkswagen">
+                    </div>
+                    <div class="col">
+                        <label for="imodelo">Modelo</label>
+                        <input type="text" class="form-control" id="imodelo" placeholder="Example -> Golf">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col">
+                        <label for="ifecha">Fecha Fabricación</label>
+                        <input type="date" class="form-control" id="ifecha" name="ifecha">
+                    </div>
+
+                    <div class="col">
+                        <label for="precio">Precio</label>
+                        <input type="number" class="form-control" name="precio" id="precio">
+                    </div>
+
+                    <div class="col">
+                        <label for="enFab">En Fabricación</label>
+                        <select id="enFab" class="form-select" name="enFab">
+                            <option id="fab1" selected>Si</option>
+                            <option id="fab0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col form-group">
+                        <label>Extras</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="extra1" id="extra1" />
+                            <label class="form-check-label" for="extra1">ABS</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="extra2" id="extra2" />
+                            <label class="form-check-label" for="extra2">ESP</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="extra3" id="extra3" />
+                            <label class="form-check-label" for="extra3">Aire Acondicionado</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="extra4" id="extra4" />
+                            <label class="form-check-label" for="extra4">Interior Premium</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="extra5" id="extra5" />
+                            <label class="form-check-label" for="extra5">Sensores Aparcamiento</label>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="textDescripcion">Descripción</label>
+                            <textarea class="form-control" id="textDescripcion" rows="5"
+                                title="Ésto es un texto de prueba para probar JQueryUI"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3 mt-5">
+                    <div class="col-12" style="display: none;" id="divImagenPrevia">
+                        <div class="row">
+                            <span>VistaPrevia</span>
+                        </div>
+                        <div class="row">
+                            <img src="" id="imagenPrevia" alt="imagen en pequeño del coche">
+                        </div>
+
+
+                    </div>
+                    <div class="col-xs-12"></div>
+                    <div class="col-12">
+                        <label for="imagen" class="form-label">Elije Imagen</label>
+                        <input class="form-control" type="file" id="imagen" name="imagen">
+                    </div>
+
+                </div>
+                <div class="row mb-1 float-end">
+                    <div class="col">
+                        <a class="btn btn-secondary me-1" id="btnCancelar">ATRÁS</a>
+                        <a class="btn btn-success" id="btnAceptar">ACEPTAR</a>
+                        <a class="btn btn-warning" id="btnModificar">MODIFICAR</a>
+                        <input type="hidden" value="" id="idCoche">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="mensajes">
+            <div class="row" id="mensajeCrear" style="display: none;">
+                <h1 class="fw-bold mb-3 mt-2">El vehículo se ha insertado correctamente</h1>
+            </div>
+            <div class="row" id="mensajeModificar" style="display: none;">
+                <h1 class="fw-bold mb-3 mt-2">El vehículo se ha modificado correctamente</h1>
+            </div>
+            <div class="row" id="mensajeBorrar" style="display: none;">
+                <h1 class="fw-bold mb-3 mt-2">El vehículo se ha borrado correctamente</h1>
+            </div>
+        </div>
+    </main>
+    <!--Footer-->
+    <div class="container-fluid pt-5 mt-auto" id="footer">
+        <div class="row p-4 bg-dark text-secondary">
+            <div class="col-xs-12 col-md-6 col-lg-2">
+                <p class="h3">GESTIONACARS</p>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+                <span class="h5 text-decoration-none">Términos & Condiciones</span>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+                <span class="h5 text-decoration-none">Avisos Legales</span>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+                <span class="h5 text-decoration-none">Política de Cookies</span>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+                <span class="h5 text-decoration-none">Propiedad Intelectual</span>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-2">
+                <span class="h5 text-decoration-none">Contacto</span>
+            </div>
+            <div class="col-xs-12">
+                <div class="text-white text-center">Copyright - Todos los derechos reservados © 2023</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script type="module" src="lib/controllers/controlador.js"></script>
+
+
+</html>
